@@ -1,0 +1,27 @@
+<div class="row narrow-row">
+
+    <table class="table table-hover table-condensed" ng-if="list.foundItems.length > 0">
+        <thead>
+        <tr>
+            <th class="col-md-3">Name</th>
+            <th class="col-md-1">Short Name</th>
+            <th class="col-md-6">Description</th>
+            <th class="col-md-2"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="item in list.foundItems">
+            <th>{{ item['name'] }}</th>
+            <td>{{ item['short_name'] }}</td>
+            <td>{{ item['description'] }}</td>
+            <td>
+                <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="text-warning" ng-if="list.foundItems.length == 0">Nothing Found</div>
